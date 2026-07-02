@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>吉開(古賀)悠美佳 様｜morich キャリアご提案</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --red: #E60012;
+    --red-light: #fff0f0;
+    --gray-50: #f9fafb;
+    --gray-100: #f3f4f6;
+    --gray-200: #e5e7eb;
+    --gray-500: #6b7280;
+    --gray-600: #4b5563;
+    --gray-700: #374151;
+    --gray-900: #111827;
+    --blue-50: #eff6ff;
+    --blue-100: #dbeafe;
+    --blue-600: #2563eb;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Noto Sans JP', sans-serif; background: #f5f5f5; color: var(--gray-900); line-height: 1.75; }
+  header { background: #fff; border-bottom: 3px solid var(--red); padding: 14px 24px; display: flex; align-items: center; gap: 16px; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 8px rgba(0,0,0,0.07); }
+  header img { height: 38px; }
+  header .htxt p:first-child { font-size: 12px; color: var(--gray-500); }
+  header .htxt p:last-child { font-size: 17px; font-weight: 900; }
+  .nav-bar { background: var(--gray-900); padding: 0 12px; overflow-x: auto; white-space: nowrap; }
+  .nav-bar a { display: inline-block; padding: 13px 18px; color: #ccc; text-decoration: none; font-size: 12px; font-weight: 700; border-bottom: 3px solid transparent; transition: all 0.2s; }
+  .nav-bar a:hover { color: #fff; border-bottom-color: var(--red); }
+  main { max-width: 860px; margin: 0 auto; padding: 28px 14px 64px; }
+  .card { background: #fff; border-radius: 12px; box-shadow: 0 2px 12px rgba(0,0,0,0.07); margin-bottom: 40px; overflow: hidden; border-top: 5px solid var(--red); }
+  .card-inner { padding: 28px 28px 36px; }
+  .badges { display: flex; flex-wrap: wrap; gap: 7px; margin-bottom: 14px; }
+  .badge { font-size: 11px; font-weight: 700; padding: 3px 12px; border-radius: 999px; border: 2px solid var(--red); color: var(--red); background: var(--red-light); }
+  .badge-blue { border-color: var(--blue-600); color: var(--blue-600); background: var(--blue-50); }
+  .co-name { font-size: clamp(22px, 5vw, 34px); font-weight: 900; line-height: 1.2; margin-bottom: 5px; }
+  .co-url { font-size: 12px; margin-bottom: 22px; }
+  .co-url a { color: var(--blue-600); text-decoration: none; }
+  .co-url a:hover { text-decoration: underline; }
+  .overview { background: var(--blue-50); border: 1px solid var(--blue-100); border-radius: 8px; padding: 16px 20px; margin-bottom: 22px; }
+  .overview h3 { font-size: 10px; font-weight: 700; color: var(--blue-600); text-transform: uppercase; letter-spacing: .1em; margin-bottom: 10px; }
+  .overview table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  .overview tr { border-bottom: 1px solid var(--blue-100); }
+  .overview tr:last-child { border-bottom: none; }
+  .overview th { text-align: left; padding: 6px 14px 6px 0; color: var(--gray-600); font-weight: 700; width: 100px; vertical-align: top; white-space: nowrap; }
+  .overview td { padding: 6px 0; color: var(--gray-700); }
+  .highlight { background: var(--red-light); border: 2px solid var(--red); border-radius: 8px; padding: 16px 20px; margin-bottom: 22px; }
+  .highlight h3 { font-size: 13px; font-weight: 900; color: var(--red); margin-bottom: 8px; }
+  .highlight p, .highlight li { font-size: 13px; color: #7a0000; margin-bottom: 4px; }
+  .highlight ul { padding-left: 16px; }
+  .accordion { margin-bottom: 16px; }
+  .acc-header { display: flex; align-items: flex-start; justify-content: space-between; cursor: pointer; padding: 12px 16px; background: var(--gray-50); border: 1px solid var(--gray-200); border-radius: 8px; user-select: none; transition: background 0.15s; }
+  .acc-header:hover { background: var(--gray-100); }
+  .acc-header .label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: var(--red); border-left: 3px solid var(--red); padding-left: 8px; margin-bottom: 5px; display: block; }
+  .acc-preview { font-size: 12px; color: var(--gray-500); line-height: 1.6; }
+  .acc-header-left { flex: 1; }
+  .acc-icon { width: 28px; height: 28px; flex-shrink: 0; margin-left: 12px; margin-top: 2px; display: flex; align-items: center; justify-content: center; border-radius: 50%; background: var(--gray-200); font-size: 13px; transition: transform 0.25s, background 0.2s; }
+  .acc-header.open .acc-icon { transform: rotate(180deg); background: var(--red); color: #fff; }
+  .acc-header.open { border-bottom-left-radius: 0; border-bottom-right-radius: 0; border-bottom-color: transparent; }
+  .acc-body { display: none; padding: 20px 18px; border: 1px solid var(--gray-200); border-top: none; border-bottom-left-radius: 8px; border-bottom-right-radius: 8px; font-size: 13px; color: var(--gray-700); line-height: 1.85; }
+  .acc-body.open { display: block; }
+  .acc-body p { margin-bottom: 10px; }
+  .acc-body ul { padding-left: 18px; margin-bottom: 10px; }
+  .acc-body li { margin-bottom: 6px; }
+  .job-wrap { border: 1px solid var(--gray-200); border-radius: 8px; overflow: hidden; margin-bottom: 16px; }
+  .job-header { background: var(--gray-900); color: #fff; padding: 14px 18px; display: flex; align-items: flex-start; justify-content: space-between; cursor: pointer; user-select: none; }
+  .job-title-text { font-size: 14px; font-weight: 900; margin-bottom: 3px; }
+  .job-preview { font-size: 11px; color: #aaa; line-height: 1.5; }
+  .job-icon { width: 26px; height: 26px; flex-shrink: 0; margin-left: 12px; margin-top: 2px; display: flex; align-items: center; justify-content: center; border-radius: 50%; background: rgba(255,255,255,0.15); font-size: 12px; transition: transform 0.25s; }
+  .job-header.open .job-icon { transform: rotate(180deg); }
+  .job-body { display: none; padding: 20px 18px; font-size: 13px; color: var(--gray-700); line-height: 1.85; }
+  .job-body.open { display: block; }
+  .job-body p { margin-bottom: 10px; }
+  .job-body ul { padding-left: 18px; margin-bottom: 10px; }
+  .job-body li { margin-bottom: 6px; }
+  .job-section { font-size: 11px; font-weight: 700; color: var(--red); text-transform: uppercase; letter-spacing: .06em; margin: 14px 0 6px; }
+  .tag { display: inline-block; font-size: 11px; font-weight: 700; padding: 2px 8px; border-radius: 4px; margin-right: 5px; margin-bottom: 8px; }
+  .tag-must { background: var(--red); color: #fff; }
+  .tag-want { background: var(--gray-600); color: #fff; }
+  .meta-pills { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 14px; }
+  .pill { font-size: 12px; font-weight: 700; padding: 4px 11px; border-radius: 999px; background: var(--gray-100); color: var(--gray-700); border: 1px solid var(--gray-200); }
+  .section-label { font-size: 11px; font-weight: 700; color: var(--gray-500); text-transform: uppercase; letter-spacing: .08em; border-left: 3px solid var(--red); padding-left: 8px; margin: 22px 0 10px; }
+  .links { display: flex; flex-wrap: wrap; gap: 8px; }
+  .lbtn { display: inline-flex; align-items: center; gap: 5px; padding: 7px 14px; border-radius: 6px; background: var(--gray-900); color: #fff; font-size: 12px; font-weight: 700; text-decoration: none; transition: background 0.2s; }
+  .lbtn:hover { background: var(--red); }
+  .lbtn-out { background: transparent; color: var(--gray-900); border: 2px solid var(--gray-200); }
+  .lbtn-out:hover { background: var(--gray-900); color: #fff; border-color: var(--gray-900); }
+  footer { text-align: center; padding: 28px 16px; font-size: 11px; color: var(--gray-500); border-top: 1px solid var(--gray-200); background: #fff; }
+  @media(max-width:600px){ .card-inner{ padding: 18px 14px 24px; } .overview th { width: 80px; } }
+</style>
+</head>
+<body>
+<header>
+  <img src="morich_logo.jpg" alt="morich">
+  <div class="htxt">
+    <p>morich キャリアご提案資料</p>
+    <p>吉開(古賀)悠美佳 様</p>
+  </div>
+</header>
+<nav class="nav-bar">
+  <a href="#k1">1. 株式会社カンム</a>
+  <a href="#k2">2. 株式会社Schoo（スクー）</a>
+</nav>
+<main>
+
+<div class="card" id="k1"><div class="card-inner">
+  <div class="badges"><span class="badge">オープンポジション</span><span class="badge badge-blue">未上場</span></div>
+  <div class="co-name">株式会社カンム</div>
+  <div class="co-url"><a href="https://kanmu.co.jp/" target="_blank">https://kanmu.co.jp/</a></div>
+  <div class="overview">
+    <h3>Corporate Overview</h3>
+    <table><tr><th>本社住所</th><td>〒150-0013 東京都渋谷区恵比寿1丁目20-18 三富ビル新館 4階</td></tr><tr><th>設立</th><td>2011年</td></tr><tr><th>上場区分</th><td>未上場（N-4以前）</td></tr></table>
+  </div>
+  <div class="highlight">
+    <h3>⭐ morichオススメPoint</h3>
+    <ul><li>★IPO準備中</li><li>★役員リレーション</li></ul>
+  </div>
+  <div class="accordion">
+    <div class="acc-header" onclick="toggleAcc(this)">
+      <div class="acc-header-left">
+        <span class="label">企業紹介</span>
+        <div class="acc-preview">2011年創業、「お金の新しい選択肢をつくる」をミッションに掲げ、日本の銀行機能のアップデートを目指すFinTech企業です。主力事業「バンドルカード」は2024年2月に1,000万ダウンロードを突破。2023年3月には三菱UFJ銀行の連結子会社となりMUFGグループへ参画しています。</div>
+      </div>
+      <div class="acc-icon">▼</div>
+    </div>
+    <div class="acc-body"><p>2011年創業、「お金の新しい選択肢をつくる」をミッションに掲げ、日本の銀行機能のアップデートを目指すFinTech企業です。2016年9月にローンチしたオンライン決済サービス「バンドルカード」を主力事業として成長を続け、2022年6月には『投資と決済』を1つのアプリで完結できるクレジットカード「Pool」をリリースしています。</p><p>「バンドルカード」はアプリから誰でも1分で発行できるVisaプリペイドカードで、カードでの決済手段をまだ持っていないユーザー、クレジットカードでの支払いに抵抗があるユーザーに、新しいカード決済体験を提供することを目的としています。2018年より、後払い式のチャージにも対応し、自宅でカード発行〜チャージ〜決済が可能。2024年2月には1,000万ダウンロードを超え、PoolはサービスリリースからE3ヶ月で、累計投資金額が1億円を突破しています。</p><p>デロイトトーマツが発表している「日本テクノロジー Fast 50」売上高成長率ランキングにおいては、2019年の1位、2020年の2位に続き、2021年も3年連続でランクインしています。2020年には株式会社セブン銀行との資本業務提携、国際ブランドVisaが提供する「Fintech ファストトラックプログラム」への参加などで事業拡大に努め、2023年3月には約7割の株式を三菱UFJ銀行に譲渡しMUFGグループへ参画、連結子会社となり新領域での事業拡大を目指しています。</p><p>IPOを目指し全社的な中長期の事業戦略を主導いただける方を求めています。</p><p><strong>代表取締役　八巻 渉氏</strong><br>1985年生まれ。2009年に慶應義塾大学 理工学部 情報工学科を卒業後、同学SFCとの産学連携を通じ設立された株式会社Studio Ousia（人工知能・自然言語処理分野の研究開発）入社。2011年に株式会社カンムを設立し、2013年から大手クレジットカード会社と提携し、クレジットカードデータを使った国内初の送客サービス「Card Linked Offer（CLO）」を運営開始。2016年9月には株式会社オリエントコーポレーションと提携し、アプリから誰でも1分で作れるVisaプリペイドカード「バンドルカード」をリリース。2019年から一般社団法人Fintech協会の理事も務める。</p><p>主力のtoC事業「バンドルカード」はWEB CMに若手芸人・令和ロマンを起用し、若年層への認知も好調な同社。売上右肩上がりで高い成長率を誇り、2022年度黒字化達成、2023年度には営業利益を大きく計上されており、フィンテックスタートアップとしては異例な安定した財務基盤があります。加えて三菱UFJ銀行と資本業務提携をすることで資金面はもちろん、今後同社の巨大な顧客基盤も活かしながら、更なる成長が見込めます！</p><p>現在、執行役員COO清野様（50代前半）が事業を牽引されており、現場のマネージャークラスもいますが、今後更なる成長拡大を目指すにあたり、既存のtoC事業をグロースしていけるミドルマネジメントとしてお迎えしたい想定です。</p></div>
+  </div>
+  
+    <div class="job-wrap">
+      <div class="job-header" onclick="toggleJob(this)">
+        <div>
+          <div class="job-title-text">📋 オープンポジション</div>
+          <div class="job-preview">IPOを目指す成長中のFinTech企業にて、toC事業をグロースさせるミドルマネジメントを募集。</div>
+        </div>
+        <div class="job-icon">▼</div>
+      </div>
+      <div class="job-body">
+        <p>詳細はお問い合わせください。既存のtoC事業「バンドルカード」をグロースしていけるミドルマネジメントとしてお迎えしたい想定です。</p>
+        <div class="meta-pills"><span class="pill">📍 東京</span><span class="pill">🏠 フルリモート可</span></div>
+      </div>
+    </div>
+  <div class="section-label">外部リンク</div>
+  <div class="links"><a class="lbtn" href="https://kanmu.co.jp/" target="_blank">🏢 企業サイト</a><a class="lbtn lbtn-out" href="https://youtu.be/hzvsJVPRE6M" target="_blank">▶ 企業紹介動画</a><a class="lbtn lbtn-out" href="https://speakerdeck.com/kanmu/kanmu-inc-mufg-alliance" target="_blank">📄 MUFGアライアンス資料</a><a class="lbtn lbtn-out" href="https://prtimes.jp/main/html/rd/p/000000084.000012797.html" target="_blank">📰 三菱UFJ銀行 資本業務提携プレスリリース</a></div>
+</div></div>
+
+<div class="card" id="k2"><div class="card-inner">
+  <div class="badges"><span class="badge">【人事】組織開発担当人事（社内育成／人事企画）</span><span class="badge badge-blue">東証グロース</span></div>
+  <div class="co-name">株式会社Schoo（スクー）</div>
+  <div class="co-url"><a href="https://corp.schoo.jp/company/corporate-profile" target="_blank">https://corp.schoo.jp/company/corporate-profile</a></div>
+  <div class="overview">
+    <h3>Corporate Overview</h3>
+    <table><tr><th>本社住所</th><td>〒150-0032 東京都渋谷区鶯谷町2-7 エクセルビル 4階</td></tr><tr><th>設立</th><td>2011年</td></tr><tr><th>上場区分</th><td>東証グロース（2024年10月上場）</td></tr></table>
+  </div>
+  <div class="highlight">
+    <h3>⭐ morichオススメPoint</h3>
+    <ul><li>★役員リレーション</li></ul>
+  </div>
+  <div class="accordion">
+    <div class="acc-header" onclick="toggleAcc(this)">
+      <div class="acc-header-left">
+        <span class="label">企業紹介</span>
+        <div class="acc-preview">2011年設立の社会人教育SaaS企業で、2024年10月にグロース市場へ新規上場。「世の中から卒業をなくす」をミッションに掲げ、累計登録会員数約120万人・累計導入企業数4,000社以上の教育SaaSプラットフォームを運営しています。</div>
+      </div>
+      <div class="acc-icon">▼</div>
+    </div>
+    <div class="acc-body"><p>2011年設立の社会人教育SaaS企業で、2024年10月にグロース市場へ新規上場しました。「世の中から卒業をなくす」をミッションに掲げ、インターネットを活用した学びや教育を通じて社会変革を目指しています。個人向けオンライン学習サービス「Schoo for Personal」を皮切りに、法人向けの「Schoo for Business」、高等教育機関向けの「Schoo Swing」など、多様なサービスを展開しています。</p><p>2025年2月時点で、累計登録会員数は約120万人、累計導入企業数は4,000社以上と、教育SaaS分野で大きな存在感を示しています。また、全国約45の自治体との提携や、奄美大島との包括協定を通じて、地域への遠隔教育普及にも力を入れています。これは「未来の暮らし」の実現を目指す、社会的意義の高い取り組みです。</p><p>法人向けサービスの拡大や新規事業の立ち上げに関与するポジションでは、経営陣と近い距離で戦略立案や意思決定に関与する機会が豊富です。また、社会的意義の高い事業に携わることで、個人としての成長と社会貢献を両立できる環境が整っています。</p><p><strong>代表取締役社長CEO 森健志郎氏</strong><br>1986年生まれで、近畿大学経営学部を卒業後、リクルートメディアコミュニケーションズに入社。同社でのeラーニング体験を契機に、2011年にSchooを創業しました。</p><p>同社のMission/Visionに強く共感し入社している方がほとんどで、我が事化できている人を求めています。</p><ul><li><strong>Mission</strong>　世の中から卒業をなくす</li><li><strong>Vision</strong>　「あたたかい革命」が起こり続ける社会を残す</li></ul><p>このミッションに伴い、『SCHOOL』の「終わりの『L』をなくす」ことで、Schooという社名は生まれました。Schooは今までにない学びをつくっており、だからこそ、自らが学び続けること、そして学び続ける人を応援することを大切にしています。企業内大学である「Schooユニバーシティ」に全員が在籍し、誰もが継続的に学び続けられる環境を提供しています。</p><p>現在のビジネス状況は、売上の9割が法人向けサービスからのもので、事業成長を背景にIPOを達成しています。しかしながら今後は教育事業を起点に、地域創生（地域経済のサステナブルな発展）や、移民・外国人労働者支援といった社会課題の解決を新規事業として展開予定で、他にも新規事業を続々と創出し、既存事業を超える事業にしたいとのこと。インターネット学習に興味がある無しだけでなく、日本の社会課題になることを事業で解決していきたい方にオススメの企業です！</p></div>
+  </div>
+  
+    <div class="job-wrap">
+      <div class="job-header" onclick="toggleJob(this)">
+        <div>
+          <div class="job-title-text">📋 【人事】組織開発担当人事（社内育成／人事企画）</div>
+          <div class="job-preview">東証グロース上場の教育SaaS企業にて、組織開発・人材育成・タレントマネジメントを推進する人事メンバーを募集。</div>
+        </div>
+        <div class="job-icon">▼</div>
+      </div>
+      <div class="job-body">
+        <p><strong>ポジション概要</strong><br>組織開発担当として、人事企画の立案・タレントマネジメント・社内育成を推進していただく人事メンバーを募集しています。</p><p>「世の中から卒業をなくす」という当社のミッション実現のため、まずは私たち自身が『学びを通して変革する組織』であり続けることを重視しています。2024年7月の東証グロース市場上場を経て、さらなる組織の進化が求められる中、経営陣も含め組織開発領域の施策を最重要テーマと位置づけています。</p><p>現在約300名規模の組織として、より戦略的な人材育成と組織成長にコミットするため、組織開発領域の機能を強化し、メンバーを募集しています。CHROや組織開発人事リーダーとともに、下記の業務をご担当いただきます。</p><p><strong>主な業務内容</strong></p><p><strong>【人事企画業務】</strong></p><ul><li>ミッション・ビジョン実現に向けた各種人事制度の企画・運用・改善</li><li>人的資本経営に関する施策の立案・推進</li></ul><p><strong>【評価制度運営】</strong></p><ul><li>評価プロセスの運営・改善（目標設定、中間レビュー、期末評価）</li><li>評価者トレーニングの企画・実施</li><li>評価結果の分析と制度チューニングの提案</li></ul><p><strong>【タレントマネジメント】</strong></p><ul><li>タレント戦略の立案と育成に関する仕組みの企画・整備</li><li>育成（タレントレビュー）会議などの企画・運営</li><li>育成制度（タレント見立ての機会）の設計・運営</li></ul><p><strong>【教育施策】</strong></p><ul><li>社内教育制度「Schooユニバーシティ」の運営・進化</li><li>階層別研修（新卒・リーダー・マネジメント層）の企画・実施</li><li>MVV濃度を高める各種施策の企画運営</li><li>AI時代に求められるスキル開発プログラムの設計</li></ul><p><strong>【エンゲージメント向上】</strong></p><ul><li>エンゲージメントサーベイの運用・分析</li><li>サーベイ結果に基づく組織課題の抽出と改善施策の立案・実行</li></ul><p><strong>【HRBP機能】</strong></p><ul><li>事業部門との連携による個別組織課題の解決支援</li><li>従業員との1on1面談実施など個別対応</li><li>マネージャー向けのピープルマネジメント支援</li></ul><p><strong>【人事データ分析・活用】</strong></p><ul><li>人事領域のデータ収集・管理・分析</li><li>データドリブンな人事施策立案のための基盤整備</li><li>経営・事業部門向けレポーティング</li></ul><p><strong>応募資格</strong></p><p><span class='tag tag-must'>MUST</span> 事業会社での人事経験3年以上（組織開発・人材開発・人事企画いずれかの領域）</p><p><strong>歓迎スキル</strong></p><ul><li><span class='tag tag-want'>WANT</span> タレントマネジメントシステムの導入/運用経験</li><li><span class='tag tag-want'>WANT</span> 研修プログラムの企画/実施経験</li><li><span class='tag tag-want'>WANT</span> エンゲージメントサーベイの運用/分析経験</li><li><span class='tag tag-want'>WANT</span> 人的資本経営に関する知見</li><li><span class='tag tag-want'>WANT</span> HRBPとしての経験</li></ul><p><strong>求める人物像</strong><br>私たちのミッションビジョンに深くご共感いただける方</p>
+        <div class="meta-pills"><span class="pill">📍 東京</span><span class="pill">🏠 ハイブリッド勤務</span><span class="pill">✅ 副業可</span></div>
+      </div>
+    </div>
+  <div class="section-label">外部リンク</div>
+  <div class="links"><a class="lbtn" href="https://corp.schoo.jp/company/corporate-profile" target="_blank">🏢 企業サイト</a><a class="lbtn lbtn-out" href="https://parallel-plow-26b.notion.site/Schoo-Entrance-Book-86da430a6df04139aea9e2beffbbde6c" target="_blank">📖 Schoo Entrance Book</a><a class="lbtn lbtn-out" href="https://note.schoo.jp/n/n58b75f6b5b91" target="_blank">📝 代表インタビュー記事</a></div>
+</div></div>
+</main>
+<footer>
+  <p>本資料はmorichが吉開(古賀)悠美佳 様のためにご用意した個人情報を含む機密資料です。無断転用・転載はご遠慮ください。</p>
+  <p style="margin-top:6px;">© 株式会社morich</p>
+</footer>
+<script>
+  function toggleAcc(header) {
+    const body = header.nextElementSibling;
+    header.classList.toggle('open');
+    body.classList.toggle('open');
+  }
+  function toggleJob(header) {
+    const body = header.nextElementSibling;
+    header.classList.toggle('open');
+    body.classList.toggle('open');
+  }
+</script>
+</body>
+</html>
